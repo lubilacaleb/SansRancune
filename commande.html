@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Commande - Sans Rancune</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Finalisez votre commande</h1>
+    <form action="https://formspree.io/f/mkgrllnn" method="POST">
+    <label>Nom complet :<br><input type="text" name="nom" required></label><br><br>
+    <label>Adresse :<br><input type="text" name="adresse" required></label><br><br>
+    <label>Email :<br><input type="email" name="email" required></label><br><br>
+    <textarea name="contenu_commande" id="commande" style="display:none;"></textarea>
+    <button type="submit">Confirmer la commande</button>
+</form>
+
+
+<script>
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    const contenu = panier.map(p => `${p.nom} - ${p.prix} €`).join('\n');
+    document.getElementById("commande").value = contenu;
+</script>
+  
+</body>
+</html>

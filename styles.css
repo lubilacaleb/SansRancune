@@ -1,0 +1,257 @@
+
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* === NAVIGATION === */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 1em 2em;
+    flex-wrap: wrap;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left {
+    flex: 1;
+}
+
+.nav-center {
+    flex: 2;
+    justify-content: center;
+    gap: 1.2em;
+    flex-wrap: wrap;
+}
+
+.nav-right {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f0a500;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+}
+
+/* === BANNIÈRE === */
+.banniere {
+    background-color: #f0a500;
+    color: white;
+    padding: 0.7em;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* === SECTION ACCUEIL AVEC IMAGES POSITIONNÉES === */
+.image-accueil {
+    padding: 3em 1.5em;
+    background-color: #fff;
+    text-align: center;
+}
+
+.welcome-text {
+    margin-bottom: 2em;
+}
+
+.welcome-text h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #111;
+}
+
+.welcome-text p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* === SECTION ACCUEIL AVEC IMAGES ALIGNÉES HORIZONTALEMENT === */
+.image-accueil {
+    background-color: #fff;
+    padding: 3em 1.5em;
+    text-align: center;
+}
+
+.welcome-text h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #111;
+}
+
+.welcome-text p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 2em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+    flex-wrap: nowrap;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-boutique {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-boutique:hover {
+    transform: scale(1.03);
+}
+
+/* === RESPONSIVE : Mobile = empilement vertical === */
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column;
+    }
+
+    .image-container {
+        justify-content: center;
+        margin-bottom: 1.5em;
+    }
+}
+
+
+
+
+
+/* === INTRODUCTION === */
+.intro {
+    text-align: center;
+    padding: 3em 1.5em;
+    background-color: #fff;
+}
+
+.intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 1.5em;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #f0a500;
+    color: white;
+    padding: 0.8em 1.6em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d48800;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #111;
+    color: white;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 1em;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 0.6em;
+}
+
+.footer-links a:hover {
+    color: #f0a500;
+}
+
+.socials a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5em;
+    font-size: 0.95rem;
+}
+
+.socials a:hover {
+    text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-center,
+    .nav-right {
+        justify-content: flex-start;
+        margin-top: 1em;
+        flex-wrap: wrap;
+    }
+
+    .image-accueil {
+        flex-direction: column;
+        padding: 2em 1em;
+    }
+
+    .image-boutique {
+        max-width: 100%;
+    }
+}

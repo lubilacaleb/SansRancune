@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sans Rancune</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfdfd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+
+        .contact-container h1 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        form label {
+            display: block;
+            margin-top: 1em;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 0.8em;
+            margin-top: 0.3em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            margin-top: 1.5em;
+            background-color: #f0a500;
+            color: white;
+            border: none;
+            padding: 1em 2em;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #d48800;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2em;
+            font-size: 0.95em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="./images/WhatsApp Image 2025-05-26 à 17.56.38_81b01baf.jpg" alt="Logo Sans Rancune">
+            </a>
+        </div>
+        <div class="nav-center">
+            <a href="index.html">Accueil</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="nouveautes.html">Nouveautés</a>
+        </div>
+        <div class="nav-right">
+            <a href="mon_compte.html">Mon compte</a>
+            <a href="contact.html">Contact</a>
+            <a href="panier.html">Panier</a>
+        </div>
+    </nav>
+
+    <!-- Contenu de contact -->
+    <div class="contact-container">
+        <h1>Contactez-nous</h1>
+        <form action="https://formspree.io/f/mkgrllnn" method="POST">
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" required>
+
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="message">Message :</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <div class="contact-info">
+            <p>Email : <a href="mailto:sansrancuneofficiel@gmail.com">sansrancuneofficiel@gmail.com</a></p>
+            <p>Instagram : <a href="https://instagram.com/sansrancune" target="_blank">@sansrancune</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

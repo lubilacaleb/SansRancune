@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - Sans Rancune</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* === BOUTIQUE === */
+.boutique-header {
+    text-align: center;
+    padding: 2em 1em;
+    background-color: #f9f9f9;
+}
+
+.boutique-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.3em;
+}
+
+.boutique-header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.produits-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    padding: 2em;
+    background-color: #fff;
+}
+
+.produit {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.produit:hover {
+    transform: translateY(-5px);
+}
+
+.produit img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.produit h2 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.prix {
+    font-size: 1.1em;
+    color: #f0a500;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
+
+.btn-panier {
+    background-color: #f0a500;
+    color: white;
+    padding: 0.7em 1.4em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-panier:hover {
+    background-color: #d48800;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (même structure que ta page d’accueil) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <img src="./images/WhatsApp Image 2025-05-26 à 17.56.38_81b01baf.jpg" alt="Logo Sans Rancune">
+            </a>
+        </div>
+        <div class="nav-center">
+            <a href="index.html">Accueil</a>
+            <a href="boutique.html">Boutique</a>
+            <a href="nouveautes.html">Nouveautés</a>
+        </div>
+        <div class="nav-right">
+            <a href="mon_compte.html">Mon compte</a>
+            <a href="contact.html">Contact</a>
+            <a href="panier.html">Panier</a>
+        </div>
+    </nav>
+
+    <!-- Titre de la boutique -->
+    <header class="boutique-header">
+        <h1>Notre Collection</h1>
+        <p>Découvrez nos dernières pièces tendance</p>
+    </header>
+
+    <!-- Liste des produits -->
+    <section class="produits-container">
+        <!-- Produit 1 -->
+        <div class="produit">
+            <img src="./images/WhatsApp Image 2025-05-26 à 17.56.40_bf76e2da.jpg" alt="T-shirt Oversize">
+            <h2>T-shirt Oversize</h2>
+            <p class="prix">25,00€</p>
+            <button class="btn-panier">Ajouter au panier</button>
+        </div>
+
+        <!-- Produit 2 -->
+        <div class="produit">
+            <img src="./images/WhatsApp Image 2025-05-26 à 17.56.41_ff055cc0.jpg" alt="capuche">
+            <h2>Capuche</h2>
+            <p class="prix">45,00€</p>
+            <button class="btn-panier">Ajouter au panier</button>
+        </div>
+
+        <!-- Produit 3 -->
+        <div class="produit">
+            <img src="./images/WhatsApp Image 2025-05-26 à 17.56.42_35ebf648.jpg" alt="Sweat Sans Rancune">
+            <h2>Sweat à capuche</h2>
+            <p class="prix">39,00€</p>
+            <button class="btn-panier">Ajouter au panier</button>
+        </div>
+
+        <!-- Produit 4 -->
+        <div class="produit">
+            <img src="./images/WhatsApp Image 2025-05-26 à 17.56.42_684b4ffd.jpg" alt="Veste Streetwear">
+            <h2>Veste Streetwear</h2>
+            <p class="prix">59,00€</p>
+            <button class="btn-panier">Ajouter au panier</button>
+        </div>
+
+        <!-- Produit 5 -->
+        <div class="produit">
+            <img src="./images/WhatsApp Image 2025-05-26 à 17.56.39_b2fbaaba.jpg" alt="Casquette Sans Rancune">
+            <h2>Casquette Noire</h2>
+            <p class="prix">19,00€</p>
+            <button class="btn-panier">Ajouter au panier</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="apropos.html">À propos</a> |
+            <a href="confidentialite.html">Confidentialité</a>
+        </div>
+        <p>&copy; 2025 Sans Rancune - Tous droits réservés.</p>
+        <div class="socials">
+            <a href="https://facebook.com/sansrancune" target="_blank">Facebook</a> |
+            <a href="https://instagram.com/sansrancune" target="_blank">Instagram</a> |
+            <a href="mailto:contact@sansrancune.com">Email</a>
+        </div>
+    </footer>
+
+
+    <script>
+    document.querySelectorAll('.btn-panier').forEach(button => {
+        button.addEventListener('click', () => {
+            const produit = button.closest('.produit');
+            const nom = produit.querySelector('h2').textContent;
+            const prix = produit.querySelector('.prix').textContent.replace('€', '').replace(',', '.');
+            const image = produit.querySelector('img').src;
+
+            const nouveauProduit = { nom, prix, image };
+            const panier = JSON.parse(localStorage.getItem('panier')) || [];
+            panier.push(nouveauProduit);
+            localStorage.setItem('panier', JSON.stringify(panier));
+
+            alert(`${nom} a été ajouté au panier.`);
+        });
+    });
+</script>
+
+
+</body>
+</html>

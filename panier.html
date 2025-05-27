@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier - Sans Rancune</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .panier-header {
+            text-align: center;
+            padding: 2em 1em;
+            background-color: #f9f9f9;
+        }
+
+        .panier-container {
+            padding: 2em;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .produit-panier {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .produit-panier img {
+            width: 80px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .produit-info {
+            flex-grow: 1;
+            margin-left: 1em;
+        }
+
+        .produit-info h3 {
+            margin: 0;
+        }
+
+        .total {
+            font-size: 1.2em;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+
+        .btn-supprimer {
+            background-color: red;
+            color: white;
+            padding: 0.3em 0.8em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="logo">
+            <img src="./images/WhatsApp Image 2025-05-26 à 17.56.38_81b01baf.jpg" alt="Logo Sans Rancune">
+        </a>
+    </div>
+    <div class="nav-center">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique</a>
+        <a href="nouveautes.html">Nouveautés</a>
+    </div>
+    <div class="nav-right">
+        <a href="mon_compte.html">Mon compte</a>
+        <a href="contact.html">Contact</a>
+        <a href="panier.html">Panier</a>
+    </div>
+</nav>
+
+<header class="panier-header">
+    <h1>Votre Panier</h1>
+    <p>Voici les articles que vous avez sélectionnés</p>
+</header>
+
+<section class="panier-container" id="panier-container">
+    <!-- Les produits du panier seront insérés ici par JavaScript -->
+</section>
+
+<div style="text-align: right; margin-top: 1em;">
+    <a href="commande.html">
+        <button style="padding: 0.8em 1.5em; background-color: green; color: white; border: none; border-radius: 5px; font-weight: bold;">
+            Passer la commande
+        </button>
+    </a>
+</div>
+
+
+<footer>
+    <div class="footer-links">
+        <a href="apropos.html">À propos</a> |
+        <a href="confidentialite.html">Confidentialité</a>
+    </div>
+    <p>&copy; 2025 Sans Rancune - Tous droits réservés.</p>
+    <div class="socials">
+        <a href="https://facebook.com/sansrancune" target="_blank">Facebook</a> |
+        <a href="https://instagram.com/sansrancune" target="_blank">Instagram</a> |
+        <a href="mailto:contact@sansrancune.com">Email</a>
+    </div>
+</footer>
+
+<script>
+    function afficherPanier() {
+        const panier = JSON.parse(localStorage.getItem('panier')) || [];
+        const container = document.getElementById('panier-container');
+        container.innerHTML = '';
+
+        if (panier.length === 0) {
+            container.innerHTML = '<p>Votre panier est vide.</p>';
+            return;
+        }
+
+        let total = 0;
+
+        panier.forEach((produit, index) => {
+            total += parseFloat(produit.prix);
+
+            const item = document.createElement('div');
+            item.className = 'produit-panier';
+            item.innerHTML = `
+                <img src="${produit.image}" alt="${produit.nom}">
+                <div class="produit-info">
+                    <h3>${produit.nom}</h3>
+                    <p>${produit.prix} €</p>
+                </div>
+                <button class="btn-supprimer" onclick="supprimerProduit(${index})">X</button>
+            `;
+            container.appendChild(item);
+        });
+
+        const totalDiv = document.createElement('div');
+        totalDiv.className = 'total';
+        totalDiv.textContent = `Total : ${total.toFixed(2)} €`;
+        container.appendChild(totalDiv);
+    }
+
+    function supprimerProduit(index) {
+        let panier = JSON.parse(localStorage.getItem('panier')) || [];
+        panier.splice(index, 1);
+        localStorage.setItem('panier', JSON.stringify(panier));
+        afficherPanier();
+    }
+
+    document.addEventListener('DOMContentLoaded', afficherPanier);
+</script>
+
+</body>
+</html>
