@@ -131,7 +131,7 @@
                 <img src="${produit.image}" alt="${produit.nom}">
                 <div class="produit-info">
                     <h3>${produit.nom}</h3>
-                    <p>${produit.prix} €</p>
+                    <p>${produit.prix} dt</p>
                 </div>
                 <button class="btn-supprimer" onclick="supprimerProduit(${index})">X</button>
             `;
@@ -140,7 +140,7 @@
 
         const totalDiv = document.createElement('div');
         totalDiv.className = 'total';
-        totalDiv.textContent = `Total : ${total.toFixed(2)} €`;
+        totalDiv.textContent = `Total : ${total.toFixed(2)} dt`;
         container.appendChild(totalDiv);
     }
 
