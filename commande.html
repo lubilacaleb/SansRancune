@@ -18,7 +18,7 @@
 
 <script>
     const panier = JSON.parse(localStorage.getItem("panier")) || [];
-    const contenu = panier.map(p => `${p.nom} - ${p.prix} €`).join('\n');
+    const contenu = panier.map(p => `${p.nom} - ${p.prix} dt`).join('\n');
     document.getElementById("commande").value = contenu;
 </script>
   
