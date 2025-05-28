@@ -115,7 +115,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.40_417d60e9.jpg" alt="T-shirt Graffiti">
             <h2>T-shirt Graffiti</h2>
-            <p class="prix">29,00€</p>
+            <p class="prix">29,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
 
@@ -123,7 +123,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.40_d1d7765c.jpg" alt="Jean Destroyed">
             <h2>Jean Destroyed</h2>
-            <p class="prix">49,00€</p>
+            <p class="prix">49,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
 
@@ -131,7 +131,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.42_54391c95.jpg" alt="Sweat Sans Capuche">
             <h2>Sweat Sans Capuche</h2>
-            <p class="prix">35,00€</p>
+            <p class="prix">35,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
 
@@ -139,7 +139,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.42_a3117a7d.jpg" alt="Bob Réversible">
             <h2>Bob Réversible</h2>
-            <p class="prix">22,00€</p>
+            <p class="prix">22,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
     </section>
@@ -163,7 +163,7 @@
         button.addEventListener('click', () => {
             const produit = button.closest('.produit');
             const nom = produit.querySelector('h2').textContent;
-            const prix = produit.querySelector('.prix').textContent.replace('€', '').replace(',', '.');
+            const prix = produit.querySelector('.prix').textContent.replace('dt', '').replace(',', '.');
             const image = produit.querySelector('img').src;
 
             const nouveauProduit = { nom, prix, image };
