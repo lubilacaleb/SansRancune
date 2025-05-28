@@ -116,7 +116,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.40_bf76e2da.jpg" alt="T-shirt Oversize">
             <h2>T-shirt Oversize</h2>
-            <p class="prix">25,00€</p>
+            <p class="prix">25,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
 
@@ -124,7 +124,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.41_ff055cc0.jpg" alt="capuche">
             <h2>Capuche</h2>
-            <p class="prix">45,00€</p>
+            <p class="prix">45,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
 
@@ -132,7 +132,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.42_35ebf648.jpg" alt="Sweat Sans Rancune">
             <h2>Sweat à capuche</h2>
-            <p class="prix">39,00€</p>
+            <p class="prix">39,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
 
@@ -140,7 +140,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.42_684b4ffd.jpg" alt="Veste Streetwear">
             <h2>Veste Streetwear</h2>
-            <p class="prix">59,00€</p>
+            <p class="prix">59,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
 
@@ -148,7 +148,7 @@
         <div class="produit">
             <img src="./images/WhatsApp Image 2025-05-26 à 17.56.39_b2fbaaba.jpg" alt="Casquette Sans Rancune">
             <h2>Casquette Noire</h2>
-            <p class="prix">19,00€</p>
+            <p class="prix">19,00 dt</p>
             <button class="btn-panier">Ajouter au panier</button>
         </div>
     </section>
@@ -173,7 +173,7 @@
         button.addEventListener('click', () => {
             const produit = button.closest('.produit');
             const nom = produit.querySelector('h2').textContent;
-            const prix = produit.querySelector('.prix').textContent.replace('€', '').replace(',', '.');
+            const prix = produit.querySelector('.prix').textContent.replace('dt', '').replace(',', '.');
             const image = produit.querySelector('img').src;
 
             const nouveauProduit = { nom, prix, image };
